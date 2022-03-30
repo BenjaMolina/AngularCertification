@@ -1,6 +1,10 @@
-# angular-certification
+# Angular Level2 Weatherapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.*.
+
+## Certification Page
+
+[ANGULAR TRAINING](https://www.angulartraining.com/angular-certification.html) 
 
 ## Development server
 
