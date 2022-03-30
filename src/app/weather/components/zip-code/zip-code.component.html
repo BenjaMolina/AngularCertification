@@ -1,0 +1,27 @@
+<div class="well">
+    <h2>Enter a zipcode:</h2>
+    
+    <app-error-response [errorMessage]="this.errorMessage"></app-error-response>
+
+    <form (ngSubmit)="onSubmit()" 
+            autocomplete="off" 
+            [formGroup]="miFormulario">
+        <input 
+            class="form-control"
+            [class.is-invalid]="validInput('zipcode')" 
+            type="number" 
+            placeholder="Zipcode" 
+            formControlName="zipcode">
+        <p  class="form-text text-danger"
+            *ngIf="validInput('zipcode')">
+            Please enter a valid US zipcode!
+        </p>
+        <br>
+        <button 
+            class="btn btn-primary"
+            [disabled]="miFormulario.invalid">
+            Add location
+        </button>
+    </form>
+</div>
+<hr>

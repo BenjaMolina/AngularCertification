@@ -1,0 +1,17 @@
+
+<div class="container-fluid" *ngIf="forecast; else error">
+    <h4>Template for 5-day forecast page: {{ this.forecast?.name }} ({{ this.forecast?.zip }})</h4>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">5-day forecast for: {{ this.forecast?.name }} ({{ this.forecast?.zip }})</h3>
+        </div>
+
+        <app-forecast-day [forecasts]="this.forecast?.data"></app-forecast-day>
+    </div>
+
+    <button class="btn btn-success" tabindex="0" (click)="back()">&lt; Back to main page</button>
+    <br>
+</div>
+<ng-template #error>
+    <app-error-response [errorMessage]="this.errorMessage"></app-error-response>
+</ng-template>

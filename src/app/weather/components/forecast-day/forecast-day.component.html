@@ -1,0 +1,29 @@
+<!--<ul class="list-group" *ngFor="let day of forecasts">
+    <li class="list-group-item" style="display: flex;">
+        <div class="left">
+            {{day.date | date:'fullDate' }}
+            <p></p>
+            <p>Conditions: {{day.conditions}}</p>
+            <p>- Min: {{ day.tempMin }} °C</p>
+            - Max: {{ day.tempMax }} °C
+        </div>
+
+        <img class="icon" [src]="day.conditions | imagen">
+</ul>-->
+
+<div class="well flex well-no-background" *ngFor="let weather of forecasts">
+    <div>
+        <h3>{{weather.date | date:'fullDate' }}</h3>
+        <h4>Current conditions: {{ weather.conditions }}</h4>
+        <h4>Temperatures today:</h4>
+        <p>
+            Current: {{ weather.temp }} °C
+            - Max: {{ weather.tempMax }} °C
+            - Min: {{ weather.tempMin }} °C
+        </p>
+
+    </div>
+    <div>    
+        <img [src]="weather.conditions | imagen">
+    </div>
+</div>

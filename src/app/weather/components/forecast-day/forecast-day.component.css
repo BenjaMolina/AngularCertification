@@ -1,0 +1,4 @@
+.well-no-background {
+    background-color: transparent !important;
+    border: none;
+}

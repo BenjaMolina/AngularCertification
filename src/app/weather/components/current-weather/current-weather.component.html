@@ -1,0 +1,21 @@
+<div>
+    <div class="well flex" *ngFor="let weather of history">
+        <div>
+            <h3>{{weather.name}} ({{weather.zip}})</h3>
+            <h4>Current conditions: {{ weather.conditions }}</h4>
+            <h4>Temperatures today:</h4>
+            <p>
+                Current: {{ weather.temp }} °C
+                - Max: {{ weather.tempMax }} °C
+                - Min: {{ weather.tempMin }} °C
+            </p>
+            <p>
+                <a [routerLink]="['/weather/forecast', weather.zip ]">Show 5-day forecast for {{weather.name}}</a>
+            </p>
+        </div>
+        <div>
+            <span class="close" (click)="removeWeather(weather)">×</span>            
+            <img [src]="weather.conditions | imagen">
+        </div>
+    </div>
+</div>
